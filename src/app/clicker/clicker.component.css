@@ -1,0 +1,11 @@
+.clicker-container{
+    padding: 1rem;
+    background-color: white;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 10px;
+    max-width: 150px;
+    align-items: center;
+}

@@ -1,0 +1,10 @@
+<div class="clicker-container">
+    <h1 >{{numero}}</h1>
+
+    <span *ngIf="numero >= 0">Es Positivo</span>
+    <span *ngIf="numero < 0">Es Negativo</span>
+
+    <button (click)="increamentar()">+1</button>
+    <button (click)="reset()">RESET</button>
+    <button (click)="decreamentar()">-1</button>
+</div>
