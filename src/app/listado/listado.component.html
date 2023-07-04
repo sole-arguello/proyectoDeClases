@@ -1,3 +1,4 @@
 <ul >
-    <li *ngFor="let pais of paises">{{pais}}</li>
+    <li *ngFor="let pais of paises">{{pais}} 
+        <span (click)="removePais(pais)">x</span></li>
 </ul>

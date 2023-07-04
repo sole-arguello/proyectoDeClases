@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-clicker',
@@ -7,16 +7,21 @@ import { Component } from '@angular/core';
 })
 export class ClickerComponent {
   //Property Binding
-  numero: number = 0
+  @Input('pepe')//numero alias de number
+  number: number = 0
+
+  @Output()
+  clickEmitter = new EventEmitter ()
   //Event Binding
   increamentar(){
-    this.numero++
+    this.number++
+    this.clickEmitter.emit()
   }
   decreamentar(){
-    this.numero--
+    this.number--
   }
   reset(){
-    this.numero = 0
+    this.number = 0
   }
 
   //Directivas 

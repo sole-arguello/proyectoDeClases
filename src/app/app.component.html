@@ -1,5 +1,6 @@
 
-<app-clicker></app-clicker>
+<app-clicker [pepe] = 'valorInicial'  (clickEmitter)="clickerWasCliked()"></app-clicker>
+<app-clicker [pepe] = '5'></app-clicker>
 
-
-<app-listado></app-listado>
+<h1>Cantidad de paises: {{paises.length}}</h1>
+<app-listado [paises]='paises' (borrarPais)="deleteCountry($event)"></app-listado>
