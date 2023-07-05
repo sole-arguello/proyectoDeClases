@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
 //CLASS JS
 export class AppComponent {
   title = 'proyectoDeClases';
-
+//------------clase 1
   valorInicial: number = 4
 
   clickerWasCliked(){
@@ -22,4 +22,8 @@ export class AppComponent {
   deleteCountry(paisABorrar: String){
     this.paises = this.paises.filter(pais => pais !== paisABorrar)
   }
+
+  /*------------clase 2  */
+
+  
 }
