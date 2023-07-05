@@ -9,12 +9,13 @@ import { ProfileModule } from './profile/profile.module';
 import { CheckoutModule } from './checkout/checkout.module';
 import { HomePageComponent } from './home-page/home-page.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     ClickerComponent,
     ListadoComponent,
-    HomePageComponent
+    HomePageComponent,
   ],
   imports: [
     BrowserModule,
