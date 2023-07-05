@@ -22,6 +22,11 @@ const routes: Routes = [
   {
     path: 'checkout',
     component: CheckoutPageComponent
+  },
+  {
+    path: '**',
+    redirectTo: '/'
+    //component: PageNotFoundComponent
   }
 ];
 
