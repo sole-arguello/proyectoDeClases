@@ -1,0 +1,219 @@
+Para probar codigo TS
+
+https://www.google.com/search?channel=fs&client=ubuntu-sn&q=ts+playground+typescript
+
+
+TS es un lenguaje de compilacion, se convierte como lenguaje fuertmente tipado
+ Angular: 
+        - Manipula el DOM
+        - Angular manipula DOM real y React manipulacion virtual del DOM 
+        - 
+DOCUMENTACION
+
+https://angular.io/
+
+single page > de una sola pagina
+
+multiple page > de muchas paginas
+
+
+(para ver en cualquier page, en herramientas del navegador > Network > refresco con simbolo
+redondo tachado > Headers> puedo ver que ejecuta un req (get) , la url, estado, > en la solapa response>
+un html )
+
+Front consulta un servicio > Back y el consulta otro servicio > DB
+
+
+--------------------------------------------------------------
+
+Angular:
+ instalacion: npm i -g @angular/cli
+
+    Cómo utilizar la CLI de Angular:
+
+        CLI se inicia al tipear ng en la terminal, hay podemos realizar varias acciones
+
+        ng new: Nos crea un nuevo proyecto de Angular.
+            ng new nombreDelProyecto
+            - Would you like to add Angular routing? > yes
+            - Which stylesheet format would you like to use? > CSS
+                CSS 
+                SCSS   [ https://sass-lang.com/documentation/syntax#scss                ] 
+                Sass   [ https://sass-lang.com/documentation/syntax#the-indented-syntax ] 
+                Less   [ http://lesscss.org                                             ] 
+
+        ng serve: Nos permite correr nuestro proyecto en nuestro local en modo desarrollo.
+             - debe correr dentro de la carpeta del proyecto
+             - que corre en > http://localhost:4200/
+
+        ng serve -o: levanta el servidor y habre elnavegador en la ruta
+
+        ng generate: Nos crea algún nuevo tipo de componente en nuestro proyecto.
+             - Para generar un componente mato el server
+             - ng g c nombreDelComponente
+             - crea 4 componnetes + css > vacio
+                                  + html > un <p> por defecto </p>
+                                  + spect.ts > test que verifica que funciona bien
+                                  + ts > 
+             - UPDATE app.modules.ts > que es donde lo genera y si elimino debo ir a 
+             eliminar manualmente
+
+             - vuelvo a levantar server
+
+        ng generate module: Nos crea una carpeta modulo:
+                                                        + archivo module.ts
+                                                                - decorator:
+                                                                        - declarations
+                                                                        - imports
+
+        ng generate component  nombreDeCarpetaCreada/nombreDeArchivoACrear: para crear un componente dentro
+                                                                            del modulo
+
+        ng generate service nombre:             
+        ng build: Buildea nuestro proyecto.
+
+        ng test: Corre los test que están en nuestro proyecto.
+
+        ng add: Nos permite añadir diversas funcionalidades a nuestra app (que se
+        transforme en una PWA, que sea un server side rendering, soporte de firebase, aãdir
+        angular material, etc).
+
+------------------------------------------------------------------------------------
+
+Dento de SRC:
+
+        - test.ts > eliminar
+        - styles.css > configuracion global css
+        - polyfills.ts > solo importa zone.js es dar retrocompatibilidad a navegadores viejos
+        - main.ts > un archivo TS que contiene un conf de entornos y la modularizacion pra la
+         inicializacion de la app. 
+        - index.html > con un root que maneja toda la estructura de la page
+        - fabicon.ico > se puede elinimar
+        se crean luego de correr ng serve
+        - assest
+        - app: 
+                - routing.modules.ts > archivo de rutas
+                ------------------------------------------------------
+                son componentes
+                - css > 
+                - html >
+                - spect.ts > de test "borrarlo"
+                - ts > logica que une todas las partes y da dinamismo al componente
+
+                //DECORATOR empieza con @ son funciones que extienden el comportamiento de algo 
+                Es una funcion que espera un ojecto de configuracion
+                        @Component({
+                        selector: 'app-root', > nombre del componente que invoco en el html index
+                        templateUrl: './app.component.html', > ruta del html del componente
+                        styleUrls: ['./app.component.css'] > array css para dar multiples estilos
+                        })
+
+                
+                        
+
+                //clase de js, le puedo agregar constructor, funciones
+                        export class AppComponent {
+                        title = 'proyectoDeClases';
+
+                        }
+
+                ------------------------------------------------------------------
+
+                - module.ts > 
+
+Property Binding > es cuando conectamos de arriba hacia abajo del Ts al Dom
+Event Binding > es cuando conectamos de abajo hacia arriba, del dom al Ts
+
+EventEmitter() decorado con @Output() emit()> es una funcion que permite realizar eventos personalizados
+
+Directivas es una orden que escribimos en el html y nos permite modificar el elem del dom al que le colocamos
+
+        - Estructurales: *ngIf / *ngFor (sintaxis >for of)
+
+        - Modificadores: agregan o quitan clases o estilos 
+                                ngClass / ngStyle
+
+----------------------------------------------------------
+Clase2
+Comunicacion entre componentes: @Input() > para abajo / @Output() > para arriba
+        + Del padre al hijo: 
+                1- en el html al padre debo indicarle la propiedad a 
+                   la que quiero mandar un valor
+
+                2- en el Ts al hijo debo agregar un decrador @Input() a
+                  la propiedad que le mande al padre
+
+
+Ciclo de vida de un componente: 
+        son distintasa funciones que tiene el componente que se ejecutan en distintos momentos
+        ej: 
+                - constructor: es lo primero que se ejecuta, se construye el componente 
+
+                - Luego surgen instancias en distintos momentos como:
+                        - ngOnInit: se va a ejecutar cuando el componente esta inicializado, 
+                                    osea luego de construirse, va al html, al template y 
+                                    empieza ejecutar, en 'ngFor' reccorer la variable, etc.
+                        
+                        - ngAfterViewInit: cuando termina de reccorer el html ejecuta esta 
+                                   funcion, que seria terminar de ejecutar la vista 
+
+
+                        - ngOnDestroy: cuando el componente deja de mostrarse en la pagina, es 
+                                   destruidopara evitar problemas de memoria en el navegador
+
+Modulos: son secciones de paginas, se puede crear un modulo para cada seccion, y 
+        dentro tener tantos componentes como querramos exclusivos de ese modulo, sectorizar el trabajo
+        * (module.ts) es el componenete base, conformado por una 'clase' de js que tiene un 'decorator'
+        con un objeto de configuracion: 
+                                        - declarations: van todos los componentes que forman parte del 
+                                                        modulo.
+                                        - imports: reclaciones con otros modulos
+
+                                        - exports: todo lo que quiero exportar, y pueda ser accedido
+
+                                        - providers: los servicios que creemos 
+
+                                        - boostrap: solo va en el modulo principal, para indicar el
+                                                    componnete base de mi modulo.
+
+        - se crea ng g module nombreDelModulo, para que funcione debo ir al modulo (app.module.ts) 
+        principal y los imports colocar los modulos nuevos.
+
+        - ng generate component  nombreDeCarpetaCreada/nombreDeArchivoACrear para crear el componenete
+
+        - app principal es donde voy a colocar los modulos creados que a su vez trae los 
+          componentes que contienen
+
+        - 
+
+
+Utils: es una carpdeta que contine modulo comun que contiene cosas en comun, se puede llamar 'common, shared, utils'
+
+
+ROUTING: Es lo que ponemos en las URL. (aap-routing.modules.ts) Contiene una clase de angular decorado con NgModule,
+con imports y exports que proviene de la libreria de rutas (@angular/router). Tambien contiene un array de rutas
+donde voy a colocar mis rutas para la raiz (forRoot)y para las sub rutas (forChild)
+
+Cada ruta contiene un 'path' que contiene el nombre de la ruta y 'component' un componenete a renderizar 
+
+PARA QUE TODO FUNCIONE DEBO USAR EN APP.COMPONENT.HTML (router-outlet), lo que hace es remplazar este componenete
+por el que tiene que mostrar
+
+LAZY LOADING: en las rutas, en vez de cargar un componente ejecuta (loadChildren) la cual carga el modulo entero 
+solamente cuando accedo a su ruta. Es una carga bajo pedido
+        loadChildren: () => import('./profile/profile.module').then(m => m.ProfileModule)
+
+        ejectua una funcion flecha que hace un import del modulo que quiera, y cuando lo halla cargado
+        devuelve el modulo completo.
+
+        "ESTO NOS OBLIGA A CREAR UN ARCHIVO DE RUTAS DENTRO DEL MODULO DEL COMPONENTE A RUTEAR"
+
+--------------------------------------------------------------------------------------------------------------
+
+Clase 3
+
+Sevicios y Observables: son claves para la conexion con el servidor. Front -> Back o Api
+
+SERVICIOS: es una clase js donde escribimos codigo que queremos reutilizar en didtintos 
+lugares denuestra app. El alcance lo defino yo. Definir funciones, modulos, metodos, atributos,
+constantes etc y poder accederla desde distintos lugares. 
