@@ -10,6 +10,9 @@ import { ButtonComponent } from './button/button.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    ButtonComponent
   ]
 })
 export class CommonsModule { }
