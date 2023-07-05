@@ -16,6 +16,10 @@ const routes: Routes = [
     component: ProfilePageComponent
   },
   {
+    path: 'profil',
+    redirectTo: 'profile'
+  },
+  {
     path: 'checkout',
     component: CheckoutPageComponent
   }
