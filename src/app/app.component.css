@@ -7,3 +7,7 @@
   color: white;
   
 }
+.toolbar .selected{
+  text-decoration: underline;
+  color: blue;
+}
