@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { User } from '../user-list/user-list.component';
+import { UserService } from '../service/user.service';
+
 
 @Component({
   selector: 'app-user-detail-list',
@@ -7,10 +8,9 @@ import { User } from '../user-list/user-list.component';
   styleUrls: ['./user-detail-list.component.css']
 })
 export class UserDetailListComponent {
-  users: User[] = [
-    {id: 1, name: 'Gaston', age: 35},
-    {id: 2, name: 'Fernando', age: 17},
-    {id: 3, name: 'Soledad', age: 27},
-    {id: 4, name: 'Flor', age: 27}
-  ]
+
+  //declaro public 'es un modificador de visibilidad', el nombre de variable userService y el tipo UserService
+  constructor(public userService: UserService){
+
+  }
 }
