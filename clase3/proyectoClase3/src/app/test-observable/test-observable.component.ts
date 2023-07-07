@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { from, timer } from 'rxjs'
+import { Subscription, from, timer } from 'rxjs'
 
 @Component({
   selector: 'app-test-observable',
@@ -8,6 +8,8 @@ import { from, timer } from 'rxjs'
   styleUrls: ['./test-observable.component.css']
 })
 export class TestObservableComponent {
+
+  subscription: Subscription | null = null
 
   constructor(){}
 
@@ -21,6 +23,12 @@ export class TestObservableComponent {
     timer(0, 1000).subscribe( (data) => {
       console.log(data)
     })
+  }
+
+  ngOnDestroy(): void{
+    if (this.subscription){
+      this.subscription.unsubscribe()
+    }
   }
 
 }
