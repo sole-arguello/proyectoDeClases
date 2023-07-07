@@ -17,6 +17,7 @@ export class UserService {
   constructor(private http: HttpClient){
     
     //RxJs Reactive extension for Javascript
+     //observable
     const countries$ = this.http.get('https://jsonplaceholder.typicode.com/todos/1')
     countries$.subscribe({
       //objeto de configuracion
@@ -24,7 +25,7 @@ export class UserService {
       error: (error) => { console.warn(error) },
       complete: () => { console.log('Complete') }
     })
-    //observable
+   
     
   }
 
