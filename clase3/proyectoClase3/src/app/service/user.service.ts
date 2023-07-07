@@ -18,8 +18,11 @@ export class UserService {
     
     //RxJs Reactive extension for Javascript
     const countries$ = this.http.get('https://jsonplaceholder.typicode.com/todos/1')
-    countries$.subscribe((data: any) => {
-      console.log(data)
+    countries$.subscribe({
+      //objeto de configuracion
+      next: (data: any) => { console.log(data) },
+      error: (error) => { console.warn(error) },
+      complete: () => { console.log('Complete') }
     })
     //observable
     
