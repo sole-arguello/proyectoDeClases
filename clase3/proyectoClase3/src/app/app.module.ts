@@ -9,6 +9,8 @@ import { Component3Component } from './component3/component3.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserDetailListComponent } from './user-detail-list/user-detail-list.component';
 import { UserService } from './service/user.service';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 @NgModule({
@@ -23,7 +25,8 @@ import { UserService } from './service/user.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [
     UserService

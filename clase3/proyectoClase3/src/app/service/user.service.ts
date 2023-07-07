@@ -1,15 +1,29 @@
 import { Injectable } from '@angular/core';
 import { User } from '../user-list/user-list.component';
 
-// @Injectable({
-//   //se puede usar a nivel raiz seria como un context de react
-//   providedIn: 'root'//llevo a module.ts de app e importo en providers el servicio
-// })
+import {HttpClient} from '@angular/common/http'
+import { Observable } from 'rxjs';
 
-@Injectable()
+@Injectable({
+  //se puede usar a nivel raiz seria como un context de react
+  providedIn: 'root'//llevo a module.ts de app e importo en providers el servicio
+})
+
+// @Injectable()
 export class UserService {
   //atributos y metodos
   //constructor(private ejemploService: EjemploService) { }
+
+  constructor(private http: HttpClient){
+    
+    //RxJs Reactive extension for Javascript
+    const countries$ = this.http.get('https://jsonplaceholder.typicode.com/todos/1')
+    countries$.subscribe((data: any) => {
+      console.log(data)
+    })
+    //observable
+    
+  }
 
   users: User[] = [
     {id: 1, name: 'Gaston', age: 35},
