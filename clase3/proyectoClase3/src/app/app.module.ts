@@ -8,6 +8,7 @@ import { Component2Component } from './component2/component2.component';
 import { Component3Component } from './component3/component3.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserDetailListComponent } from './user-detail-list/user-detail-list.component';
+import { UserService } from './service/user.service';
 
 
 @NgModule({
@@ -24,7 +25,9 @@ import { UserDetailListComponent } from './user-detail-list/user-detail-list.com
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
