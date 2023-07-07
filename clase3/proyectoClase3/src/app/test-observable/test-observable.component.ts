@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { from } from 'rxjs'
+import { from, timer } from 'rxjs'
 
 @Component({
   selector: 'app-test-observable',
@@ -12,10 +12,13 @@ export class TestObservableComponent {
   constructor(){}
 
   ngOnInit(): void {
-
-    
     //observable from que va a emitir de a uno los valores del array
-    from([ 1,3,2,78,2,4 ]).subscribe( (data) => {
+    // from([ 1,3,2,78,2,4 ]).subscribe( (data) => {
+    //   console.log(data)
+    // })
+
+    //genera un observable infinito emitiendo un numero secuencial
+    timer(0, 1000).subscribe( (data) => {
       console.log(data)
     })
   }
