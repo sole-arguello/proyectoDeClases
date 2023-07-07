@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 
-import { Subscription, from, timer } from 'rxjs'
+import { Subscription,from, timer } from 'rxjs'
 
+import { filter, map } from 'rxjs/operators'
 @Component({
   selector: 'app-test-observable',
   templateUrl: './test-observable.component.html',
@@ -20,7 +21,10 @@ export class TestObservableComponent {
     // })
 
     //genera un observable infinito emitiendo un numero secuencial
-    timer(0, 1000).subscribe( (data) => {
+    this.subscription = timer(0, 1000).pipe(
+      filter((data) => { return data %2 === 0 }),
+      map((data: number) => data * 2),
+      ).subscribe( (data) => {
       console.log(data)
     })
   }
