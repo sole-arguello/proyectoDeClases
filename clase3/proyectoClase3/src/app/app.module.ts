@@ -10,6 +10,7 @@ import { UserListComponent } from './user-list/user-list.component';
 import { UserDetailListComponent } from './user-detail-list/user-detail-list.component';
 import { UserService } from './service/user.service';
 import { HttpClientModule } from '@angular/common/http';
+import { TestObservableComponent } from './test-observable/test-observable.component';
 
 
 
@@ -21,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
     Component3Component,
     UserListComponent,
     UserDetailListComponent,
+    TestObservableComponent,
 
   ],
   imports: [
