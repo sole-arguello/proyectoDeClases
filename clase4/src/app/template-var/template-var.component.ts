@@ -8,4 +8,9 @@ import { Component } from '@angular/core';
 export class TemplateVarComponent {
   //property binding
   nombre: string = 'Soledad'
+
+  log(value: any){
+    console.log(value)
+    
+  }
 }
