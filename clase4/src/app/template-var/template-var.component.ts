@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./template-var.component.css']
 })
 export class TemplateVarComponent {
-
+  //property binding
+  nombre: string = 'Soledad'
 }
