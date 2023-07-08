@@ -6,13 +6,26 @@
 
       <div class="field">
         
-        <input autocomplete="off" id="logemail" placeholder="Email" class="input-field" name="logemail" type="email">
+        <input 
+            autocomplete="off" id="logemail" 
+            placeholder="Email" class="input-field" 
+            name="email" type="email"
+
+            ngModel
+
+        >
       </div>
 
 
       <div class="field">
         
-        <input autocomplete="off" id="logpass" placeholder="Password" class="input-field" name="logpass" type="password">
+        <input 
+        autocomplete="off" id="logpass" 
+        placeholder="Password" class="input-field" 
+        name="password" type="password"
+
+        ngModel
+        >
       </div>
       <button class="btn" type="submit" (click)="submit(myForm)">Login</button>
 
