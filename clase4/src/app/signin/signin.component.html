@@ -1,0 +1,22 @@
+
+<h1>Forms SignIn</h1>
+<div class="card">
+    <h4 class="title">Log In!</h4>
+    <form #myForm="ngForm">
+
+      <div class="field">
+        
+        <input autocomplete="off" id="logemail" placeholder="Email" class="input-field" name="logemail" type="email">
+      </div>
+
+
+      <div class="field">
+        
+        <input autocomplete="off" id="logpass" placeholder="Password" class="input-field" name="logpass" type="password">
+      </div>
+      <button class="btn" type="submit" (click)="submit(myForm)">Login</button>
+
+
+      <a href="#" class="btn-link">Forgot your password?</a>
+    </form>
+  </div>
