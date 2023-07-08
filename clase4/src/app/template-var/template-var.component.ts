@@ -9,8 +9,8 @@ export class TemplateVarComponent {
   //property binding
   nombre: string = 'Soledad'
 
-  log(value: any){
+  log(value: HTMLElement){
     console.log(value)
-    
+    value.classList.add('prueba')
   }
 }
