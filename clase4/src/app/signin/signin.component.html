@@ -11,24 +11,29 @@
             placeholder="Email" class="input-field" 
             name="email" type="email"
 
-            ngModel required
+            ngModel required email
 
         >
       </div>
-
+      <span class="error" *ngIf="myForm.form.controls['email']?.errors?.['required']">Este campo es obligatorio </span>
 
       <div class="field">
-        
+        email
         <input 
         autocomplete="off" id="logpass" 
         placeholder="Password" class="input-field" 
         name="password" type="password"
 
-        ngModel 
+        ngModel required 
+        minlength="3" maxlength="10"
         >
+
       </div>
+      <span class="error" *ngIf="myForm.form.controls['password']?.errors?.['required']">Este campo es obligatorio </span>
+
       <button class="btn" type="submit" (click)="submit(myForm)"
-      [disabled]="myForm.status ===  'INVALID'">Login</button>
+      >Login</button>
+      <!-- [disabled]="myForm.status ===  'INVALID'" -->
 
 
       <a href="#" class="btn-link">Forgot your password?</a>
