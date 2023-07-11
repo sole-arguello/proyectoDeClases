@@ -11,7 +11,7 @@ export class SignupComponent {
   //formulario Reactivos
   myForm = new FormGroup({
     fullName: new FormControl('Sole'),
-    email: new FormControl(),
-    password: new FormControl()
+    email: new FormControl('sole@gmail.com'),
+    password: new FormControl('123456')
   })
 }
