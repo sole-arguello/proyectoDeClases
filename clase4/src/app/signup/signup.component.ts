@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-signup',
@@ -7,6 +7,14 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent {
+  //inyeccion de dependencia/ Form builder
+  constructor(private fb: FormBuilder){}
+
+  signUpForm = this.fb.group({
+    fullName: '',
+    email: '',
+    password: ''
+  })
 
   //formulario Reactivos
   myForm = new FormGroup({
