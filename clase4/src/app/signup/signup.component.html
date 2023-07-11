@@ -21,7 +21,7 @@
           formControlName="password"
           >
         </div>
-        <button>Sign up</button>
+        <button [disabled]="myForm.invalid">Sign up</button>
     </form>
     <div class="form-section">
       <p>Have an account? <a href="">Log in</a> </p>
