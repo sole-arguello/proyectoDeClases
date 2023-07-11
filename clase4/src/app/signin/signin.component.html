@@ -12,14 +12,14 @@
             name="email" type="email"
 
             ngModel required email
-
+            #emailInput="ngModel"
         >
       </div>
-      <span class="error" *ngIf="myForm.form.controls['email']?.errors?.['required']
-        && myForm.form.controls['email']?.touched">Este campo es obligatorio </span>
+      <span class="error" *ngIf="emailInput.errors?.['required']
+        && emailInput.touched">Este campo es obligatorio </span>
 
-      <span class="error" *ngIf="myForm.form.controls['email']?.errors?.['email'] 
-        && myForm.form.controls['email']?.dirty">El texto ingresado no coincide con un mail </span>
+      <span class="error" *ngIf="emailInput.errors?.['email'] 
+        && emailInput.dirty">El texto ingresado no coincide con un mail </span>
 
       <div class="field">
         <input 
@@ -32,8 +32,8 @@
         > 
 
       </div>
-      <span class="error" *ngIf="myForm.form.controls['password']?.errors?.['required'] 
-           && myForm.form.controls['password']?.dirty">Este campo es obligatorio </span>
+      <span class="error" *ngIf="emailInput.errors?.['required'] 
+           && emailInput.dirty">Este campo es obligatorio </span>
 
       <button class="btn" type="submit" (click)="submit(myForm)" [disabled]="myForm.invalid"
       >Login</button>
