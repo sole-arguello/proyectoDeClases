@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-signup',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class SignupComponent {
 
+  //formulario Reactivos
+  myForm = new FormGroup({
+    fullName: new FormControl('Sole'),
+    email: new FormControl(),
+    password: new FormControl()
+  })
 }
