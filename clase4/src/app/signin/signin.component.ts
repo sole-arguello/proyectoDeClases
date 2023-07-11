@@ -7,15 +7,8 @@ import { Component } from '@angular/core';
 })
 export class SigninComponent {
 
-  // email: string = ''
-  // password: string = ''
-
   submit(myForm: any){
-    console.log('submit', myForm)
-    // console.log('submit', {
-    //   email: this.email,
-    //   password: this.password
-    // })
+    console.log('submit', myForm.value)
   }
 
 }
