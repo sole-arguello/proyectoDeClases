@@ -3,10 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { EmployeePipe } from './pipe-propio/employee.pipe';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    EmployeePipe,
+   
   ],
   imports: [
     BrowserModule,

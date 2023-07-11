@@ -40,7 +40,8 @@
     <tr *ngFor="let persona of personas">
         <td>{{persona.id}}</td>
         <td>{{persona.nombre}}</td>
-        <td>{{persona.employeeType}}</td>
+        <!-- uso el pipe creado por mi y concateno con uno de angular -->
+        <td>{{persona.employeeType | employee | titlecase}}</td>
     </tr>
 </table>
 
