@@ -9,10 +9,13 @@
 
           formControlName="fullName"
           >
+          <span *ngIf=" fullName?.touched && fullName?.hasError('required')">Este campo es obligatorio</span>
           <input type="email" class="input" placeholder="Email"
           
           formControlName="email"
           >
+          <span *ngIf=" email?.touched && email?.hasError('required')">Este campo es obligatorio</span>
+
           <input type="password" class="input" placeholder="Password"
           
           formControlName="password"

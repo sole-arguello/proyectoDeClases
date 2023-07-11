@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-signup',
@@ -10,8 +10,28 @@ export class SignupComponent {
 
   //formulario Reactivos
   myForm = new FormGroup({
-    fullName: new FormControl('Sole'),
-    email: new FormControl('sole@gmail.com'),
-    password: new FormControl('123456')
+    fullName: new FormControl('', [
+      Validators.required
+    ]),
+    email: new FormControl('', [
+      Validators.required
+    ]),
+    password: new FormControl('', [
+      Validators.required,
+      Validators.minLength(12),
+      Validators.minLength(6), 
+    ])
   })
+
+  get fullName(){
+    return this.myForm.get('fullName')
+  }
+
+  get email(){
+    return this.myForm.get('email')
+  }
+
+  get password(){
+    return this.myForm.get('password')
+  }
 }
