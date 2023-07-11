@@ -15,23 +15,27 @@
 
         >
       </div>
-      <span class="error" *ngIf="myForm.form.controls['email']?.errors?.['required']">Este campo es obligatorio </span>
+      <span class="error" *ngIf="myForm.form.controls['email']?.errors?.['required']
+        && myForm.form.controls['email']?.touched">Este campo es obligatorio </span>
+
+      <span class="error" *ngIf="myForm.form.controls['email']?.errors?.['email'] 
+        && myForm.form.controls['email']?.dirty">El texto ingresado no coincide con un mail </span>
 
       <div class="field">
-        email
         <input 
-        autocomplete="off" id="logpass" 
+        autocomplete="off" id="logpass"
         placeholder="Password" class="input-field" 
         name="password" type="password"
 
         ngModel required 
         minlength="3" maxlength="10"
-        >
+        > 
 
       </div>
-      <span class="error" *ngIf="myForm.form.controls['password']?.errors?.['required']">Este campo es obligatorio </span>
+      <span class="error" *ngIf="myForm.form.controls['password']?.errors?.['required'] 
+           && myForm.form.controls['password']?.dirty">Este campo es obligatorio </span>
 
-      <button class="btn" type="submit" (click)="submit(myForm)"
+      <button class="btn" type="submit" (click)="submit(myForm)" [disabled]="myForm.invalid"
       >Login</button>
       <!-- [disabled]="myForm.status ===  'INVALID'" -->
 
