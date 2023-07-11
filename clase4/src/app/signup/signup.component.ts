@@ -11,9 +11,13 @@ export class SignupComponent {
   constructor(private fb: FormBuilder){}
 
   signUpForm = this.fb.group({
-    fullName: '',
-    email: '',
-    password: ''
+    fullName: ['', Validators.required],
+    email: ['', Validators.required],
+    password: ['',
+    Validators.required,
+    Validators.minLength(12),
+    Validators.minLength(6), 
+  ]
   })
 
   //formulario Reactivos
