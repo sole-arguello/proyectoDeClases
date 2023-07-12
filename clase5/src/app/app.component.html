@@ -9,51 +9,7 @@
 
 <div class="content" role="main">
 
-<!-- pipe de angular -- simpobo | -->
-
-<!-- texto original en minuscula -->
-<h1>{{title1 | uppercase}}</h1>
-
-<!-- texto original en mayuscula -->
-<h1>{{title2 | lowercase}}</h1>
-
-<!-- valor original es 30 a secas-->
-<h1>{{price | currency}}</h1>
-
-
-<!-- formato original el que da por defecto la funcion-->
-<h1>{{date}}</h1>
-<!-- puede llevar guion, barra, espacio y acomodar como yo quiera el formato -->
-<h1>{{date | date: 'dd-MM-yyyy'}}</h1>
-
-<!-- Objeto de personas: {{personas}} con el pipe lo convierto a JSON-->
-<br>
-<!-- concateno los pipe -->
-<pre>{{personas | json | uppercase}}</pre>
-<br><br>
-<table>
-    <tr>
-        <td>ID</td>
-        <td>Nombre</td>
-        <td>Tipo de Empleado</td>
-    </tr>
-    <tr *ngFor="let persona of personas">
-        <td>{{persona.id}}</td>
-        <td>{{persona.nombre}}</td>
-        <!-- uso el pipe creado por mi y concateno con uno de angular -->
-        <td>{{persona.employeeType | employee | titlecase}}</td>
-    </tr>
-</table>
-
-<br>
-<p>Es un objeto la variable{{numbers$}}</p>
-<p>Para poder mostrarla la re asigne en una suscripcion --> {{n}}</p>
-
-<P>Suplantado por el pipe async: {{numbers$ | async}}</P>
-
-
-
-
+<!-- <app-pipe-directivas-propias></app-pipe-directivas-propias> -->
 
 
 </div>
