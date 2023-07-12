@@ -43,11 +43,19 @@ export class HomeComponent implements OnInit {
       price: 5663,
     }
   ]
+  //BehaviorSubject
+  numbers$ = new Subject()
+
   //inyecto
   constructor(private cartService: CartService){}
-  
+
+  //BehaviorSubject
   ngOnInit(): void {
-    
+    this.numbers$.next(1)
+    this.numbers$.subscribe(value => {
+      console.log(value)
+    })
+    this.numbers$.next(2)
   }
 
   addToCart(product: Product){
