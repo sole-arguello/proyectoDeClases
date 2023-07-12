@@ -67,6 +67,7 @@ export class HomeComponent implements OnInit {
     })
     this.numbers2$.next(30)
     this.numbers2$.next(40)
+    //this.numbers2$.getValue()
   }
 
   addToCart(product: Product){
