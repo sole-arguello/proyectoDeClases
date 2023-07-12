@@ -1,1 +1,11 @@
-<p>home works!</p>
+<p>Subjet </p>
+<!-- 
+<button (click)="emit()">Emit</button>
+<br><br> -->
+<app-nav-bar></app-nav-bar>
+<div *ngFor="let p of products">
+    {{p.name}}
+    {{p.price | currency}}
+    <button (click)="addToCart(p)">Add To Card</button>
+</div>
+
