@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Subject, from } from 'rxjs';
+import { BehaviorSubject, Subject, from } from 'rxjs';
 import { CartService } from '../service/cart.service';
 
 export type Product = {
@@ -45,17 +45,28 @@ export class HomeComponent implements OnInit {
   ]
   //BehaviorSubject
   numbers$ = new Subject()
+  //inicializo
+  numbers2$ = new BehaviorSubject(10)
 
   //inyecto
   constructor(private cartService: CartService){}
 
   //BehaviorSubject
   ngOnInit(): void {
-    this.numbers$.next(1)
-    this.numbers$.subscribe(value => {
+    // //Subject
+    // this.numbers$.next(1)
+    // this.numbers$.subscribe(value => {
+    //   console.log(value)
+    // })
+    // this.numbers$.next(2)
+
+    //nuevo valor
+    this.numbers2$.next(20)
+    this.numbers2$.subscribe(value => {
       console.log(value)
     })
-    this.numbers$.next(2)
+    this.numbers2$.next(30)
+    this.numbers2$.next(40)
   }
 
   addToCart(product: Product){
